@@ -863,7 +863,7 @@ function handleSubmit(btn) {
   const style = document.getElementById('f-style').value.trim();
   const notes = document.getElementById('f-notes').value.trim();
 
-  // Send to Formspree (email + Google Sheets)
+  // Send to Formspree (email)
   const formData = new FormData();
   formData.append('name', name);
   formData.append('phone', phone);
@@ -874,6 +874,19 @@ function handleSubmit(btn) {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
+  });
+
+  // Send to Google Sheets
+  fetch('https://script.google.com/macros/s/AKfycbwSCGYuPsi9XNGX4-Px75XeZ1tMbIBmeFbDN7-eRQD-0ioz5sS4AVfu2JwWYQzg4GJB/exec', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      phone: phone,
+      looking_for: selected.join(', '),
+      style: style,
+      notes: notes
+    })
   });
 
   // Build WhatsApp message
