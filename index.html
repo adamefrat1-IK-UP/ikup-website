@@ -876,17 +876,17 @@ function handleSubmit(btn) {
     headers: { 'Accept': 'application/json' }
   });
 
-  // Send to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbwSCGYuPsi9XNGX4-Px75XeZ1tMbIBmeFbDN7-eRQD-0ioz5sS4AVfu2JwWYQzg4GJB/exec', {
+  // Send to Google Sheets (no-cors mode)
+  const sheetsData = new FormData();
+  sheetsData.append('name', name);
+  sheetsData.append('phone', phone);
+  sheetsData.append('looking_for', selected.join(', '));
+  sheetsData.append('style', style);
+  sheetsData.append('notes', notes);
+  fetch('https://script.google.com/macros/s/AKfycbwq-cDp6cjgLF3uknRbsDC4tHzhov_G1ZKrz4Lc80HzpyUKlcI9R9uwB_1NCfM-D2Ld/exec', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: name,
-      phone: phone,
-      looking_for: selected.join(', '),
-      style: style,
-      notes: notes
-    })
+    mode: 'no-cors',
+    body: sheetsData
   });
 
   // Build WhatsApp message
