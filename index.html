@@ -346,10 +346,21 @@
     }
     .carousel-item:hover img { transform: scale(1.03); }
     .carousel-item--before {
+      border: 2.5px solid rgba(180,150,80,0.75);
+      position: relative;
       width: 420px;
-      border: 1px solid var(--border);
+    }
+    .carousel-item--before::before {
+      content: 'IKEA ORIGINAL';
+      position: absolute; top: 10px; right: 10px; z-index: 2;
+      background: rgba(28,28,26,0.75);
+      color: var(--gold);
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
+      padding: 3px 7px;
+      border: 1px solid rgba(180,150,80,0.4);
     }
     .carousel-item--before img {
+      filter: grayscale(20%) brightness(0.9);
       object-fit: cover;
       padding: 0;
       background: #eeebe4;
@@ -375,6 +386,7 @@
       flex-shrink: 0;
     }
     .item-tag--before { background: rgba(255,255,255,0.25); color: #fff; }
+
     .item-name { font-size: 0.9rem; font-weight: 700; color: #fff; }
     .item-sub { width: 100%; font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: -0.2rem; padding-right: calc(0.68rem + 0.55rem + 0.55rem + 0.6rem); }
     @media (max-width: 768px) {
@@ -382,7 +394,9 @@
       .transforms-inner { padding: 0 1.5rem; }
       .carousel-wrap { padding: 0 1.5rem 1rem; }
       .carousel-item { width: 280px; }
-      .carousel-item--before { width: 200px; }
+      .carousel-item--before-REMOVED {
+      border: 1.5px solid rgba(180,150,80,0.35);
+      position: relative; width: 200px; }
       .carousel-item img, .carousel-item--before img { height: 220px; }
     }
 
@@ -498,14 +512,14 @@
           <img src="images/metod-before.png" alt="METOD לפני" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
-            <span class="item-name">METOD סטנדרטי</span>
+            <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
           <img src="images/metod-after-01.png" alt="גימור 01" />
           <div class="item-label">
             <span class="item-tag">01</span>
-            <span class="item-name">טאופ אפור</span>
+            <span class="item-name">Formica #01</span>
             <span class="item-sub">חזיתות מט, ידית אינטגרלית, אריחים לבנים</span>
           </div>
         </div>
@@ -513,7 +527,7 @@
           <img src="images/metod-after-02.png" alt="גימור 02" />
           <div class="item-label">
             <span class="item-tag">02</span>
-            <span class="item-name">צבעוני שלישייה</span>
+            <span class="item-name">Palette #1, #2, #3</span>
             <span class="item-sub">טרקוטה, ירוק מרווה ובז' — פורמייקה מט</span>
           </div>
         </div>
@@ -521,7 +535,7 @@
           <img src="images/metod-after-03.png" alt="גימור 03" />
           <div class="item-label">
             <span class="item-tag">03</span>
-            <span class="item-name">אלון מעושן כהה</span>
+            <span class="item-name">Oak #03</span>
             <span class="item-sub">עץ כהה עשיר, ידיות פליז</span>
           </div>
         </div>
@@ -529,7 +543,7 @@
           <img src="images/metod-after-04.png" alt="גימור 04" />
           <div class="item-label">
             <span class="item-tag">04</span>
-            <span class="item-name">אלון אלכסוני</span>
+            <span class="item-name">Pine #05</span>
             <span class="item-sub">סיבי עץ אלכסוניים, ידיות פליז</span>
           </div>
         </div>
@@ -537,7 +551,7 @@
           <img src="images/metod-after-05.png" alt="גימור 05" />
           <div class="item-label">
             <span class="item-tag">05</span>
-            <span class="item-name">ביץ' סקנדינבי</span>
+            <span class="item-name">Birch #02</span>
             <span class="item-sub">עץ ביץ' בהיר, ידיות פליז</span>
           </div>
         </div>
@@ -578,14 +592,14 @@
           <img src="images/pax-before.png" alt="PAX לפני" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
-            <span class="item-name">PAX סטנדרטי</span>
+            <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
           <img src="images/pax-after-01.png" alt="גימור 01" />
           <div class="item-label">
             <span class="item-tag">01</span>
-            <span class="item-name">ירוק יהלומים</span>
+            <span class="item-name">Diamond #01</span>
             <span class="item-sub">ירוק בקבוק, ידיות עור — חדר שינה הורים</span>
           </div>
         </div>
@@ -593,7 +607,7 @@
           <img src="images/pax-after-02.png" alt="גימור 02" />
           <div class="item-label">
             <span class="item-tag">02</span>
-            <span class="item-name">לבן בוטני</span>
+            <span class="item-name">Grid #01</span>
             <span class="item-sub">לבן מט, עיטורי קשתות — חדר שינה</span>
           </div>
         </div>
@@ -601,7 +615,7 @@
           <img src="images/pax-after-03.png" alt="גימור 03" />
           <div class="item-label">
             <span class="item-tag">03</span>
-            <span class="item-name">אפור מסדרון</span>
+            <span class="item-name">Formica #02</span>
             <span class="item-sub">אפור מט, ידית עץ — כניסה לבית</span>
           </div>
         </div>
@@ -609,7 +623,7 @@
           <img src="images/pax-after-04.png" alt="גימור 04" />
           <div class="item-label">
             <span class="item-tag">04</span>
-            <span class="item-name">אלון סקנדינבי</span>
+            <span class="item-name">Oak #04</span>
             <span class="item-sub">עץ אלון, ידיות חור עגול — חדר ילדים</span>
           </div>
         </div>
@@ -634,14 +648,14 @@
           <img src="images/besta-before.jpg" alt="METOD לפני" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
-            <span class="item-name">METOD סטנדרטי</span>
+            <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
           <img src="images/besta-after-01.jpg" alt="גימור 01" />
           <div class="item-label">
             <span class="item-tag">01</span>
-            <span class="item-name">אלון אלכסוני</span>
+            <span class="item-name">Grid #02</span>
             <span class="item-sub">עץ אלון, ידית נגרות מובנית</span>
           </div>
         </div>
@@ -649,7 +663,7 @@
           <img src="images/besta-after-02.png" alt="גימור 02" />
           <div class="item-label">
             <span class="item-tag">02</span>
-            <span class="item-name">וונגה כהה</span>
+            <span class="item-name">Walnut Stripes #01</span>
             <span class="item-sub">עץ וונגה, ללא ידיות</span>
           </div>
         </div>
@@ -657,7 +671,7 @@
           <img src="images/besta-after-03.png" alt="גימור 03" />
           <div class="item-label">
             <span class="item-tag">03</span>
-            <span class="item-name">צבעוני + שיש</span>
+            <span class="item-name">Palette #04</span>
             <span class="item-sub">דו-גוני עם משטח שיש</span>
           </div>
         </div>
@@ -665,7 +679,7 @@
           <img src="images/besta-after-04.png" alt="גימור 04" />
           <div class="item-label">
             <span class="item-tag">04</span>
-            <span class="item-name">לבן נקי + עץ</span>
+            <span class="item-name">Oak Top #01</span>
             <span class="item-sub">לבן מט, משטח עץ טבעי</span>
           </div>
         </div>
@@ -787,6 +801,10 @@
         </div>
       </div>
       <div class="cform-field">
+        <label class="cform-label">מייל <span class="cform-hint">אופציונלי</span></label>
+        <input class="cform-input" type="email" id="f-email" placeholder="your@email.com" />
+      </div>
+      <div class="cform-field">
         <label class="cform-label">מה אתם מחפשים? <span class="cform-hint">אפשר לבחור כמה</span></label>
         <div class="cform-toggles">
           <button type="button" class="ctoggle" onclick="toggleBtn(this)">מטבח</button>
@@ -799,12 +817,11 @@
         </div>
       </div>
       <div class="cform-field">
-        <label class="cform-label">סגנון / חומרים / צבעים שאהבתם</label>
-        <textarea class="cform-input cform-textarea" id="f-style" placeholder="עץ טבעי, אפור מט, ידיות עור, סגנון מינימליסטי..."></textarea>
+        <label class="cform-label">הערות / מידות / חומרים וכל מה שכדאי שנדע</label>
+        <textarea class="cform-input cform-textarea" id="f-notes" placeholder="מידות, חומרים, סגנון, תקציב, לוח זמנים..."></textarea>
       </div>
-      <div class="cform-field">
-        <label class="cform-label">הערות נוספות / מידות / קישור לתמונה</label>
-        <textarea class="cform-input cform-textarea" id="f-notes" placeholder="מידות, תמונות השראה, תקציב, לוח זמנים..."></textarea>
+      <div class="cform-field" style="display:none">
+        <textarea id="f-style"></textarea>
       </div>
 
       <div class="cform-footer">
@@ -851,9 +868,25 @@ function showFileName(input) {
 function handleSubmit(btn) {
   const name = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
+  
+  // Israeli phone validation
+  const phoneClean = phone.replace(/[-\s]/g, '');
+  const israeliPhone = /^(05\d{8}|5\d{8}|5\d{8}|\+9725\d{8}|9725\d{8})$/.test(phoneClean);
+  
   if (!name || !phone) {
     if (!name) document.getElementById('f-name').focus();
     else document.getElementById('f-phone').focus();
+    btn.style.transform = 'translateX(6px)';
+    setTimeout(() => btn.style.transform = 'translateX(-6px)', 100);
+    setTimeout(() => btn.style.transform = '', 200);
+    return;
+  }
+  if (!israeliPhone) {
+    const phoneInput = document.getElementById('f-phone');
+    phoneInput.style.borderColor = 'var(--gold)';
+    phoneInput.placeholder = 'מספר לא תקין — נסו שוב (05X-XXXXXXX)';
+    phoneInput.value = '';
+    phoneInput.focus();
     btn.style.transform = 'translateX(6px)';
     setTimeout(() => btn.style.transform = 'translateX(-6px)', 100);
     setTimeout(() => btn.style.transform = '', 200);
@@ -869,6 +902,8 @@ function handleSubmit(btn) {
   formData.append('phone', phone);
   formData.append('looking_for', selected.join(', '));
   formData.append('style', style);
+  const email = document.getElementById('f-email').value.trim();
+  formData.append('email', email);
   formData.append('notes', notes);
   fetch('https://formspree.io/f/mkoeqyyw', {
     method: 'POST',
