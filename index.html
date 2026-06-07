@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IK-UP - חזיתות ואבזרים פרמיום לרהיטי IKEA. שדרוג אישי וקל ללא נגרות. מותג ישראלי ראשון בתחום IKEA Hacking." />
   <title>IK-UP — לקחת את הטוב משני העולמות</title>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <style>
@@ -12,7 +13,7 @@
       --charcoal: #1C1C1A;
       --gold: #B8962E;
       --gold-light: #D4AF5A;
-      --muted: #7A7468;
+      --muted: #6B6157;
       --border: #DDD8CE;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -407,6 +408,25 @@
     }
     .footer-copy { font-size:0.75rem; color:rgba(255,255,255,0.3); }
 
+    /* DROPDOWN TOGGLE */
+    .dropdown-toggle {
+      background:none; border:none; color:var(--gold); cursor:pointer;
+      font-size:0.9rem; font-weight:500; padding:0.5rem 0; margin-top:0.8rem;
+      display:inline-flex; align-items:center; gap:0.3rem;
+      transition:color 0.3s ease;
+    }
+    .dropdown-toggle:hover { color:var(--gold-light); }
+    .dropdown-toggle .arrow {
+      display:inline-block; transition:transform 0.3s ease; font-size:0.75rem;
+    }
+    .dropdown-toggle.open .arrow { transform:rotate(180deg); }
+
+    .dropdown-content {
+      max-height:0; overflow:hidden; transition:max-height 0.3s ease;
+      color:var(--muted); font-size:0.9rem; line-height:1.6; margin-top:0;
+    }
+    .dropdown-content.open { max-height:500px; margin-top:0.8rem; }
+
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     .hero-eyebrow { animation:fadeUp 0.7s ease both 0.2s; }
@@ -438,11 +458,10 @@
   </style>
 </head>
 <body>
-
-<!-- HERO -->
+<main>
 <section class="hero">
   <nav class="nav">
-    <img src="images/logo.png" alt="IK-UP" class="logo-img" />
+    <img src="images/logo.png" alt="IK-UP" class="logo-img" loading="lazy" />
     <div class="nav-tagline">לקחת את הטוב משני העולמות</div>
   </nav>
   <div class="hero-body">
@@ -456,7 +475,7 @@
       אנחנו לוקחים את הפריטים החכמים של IKEA ומשדרגים אותם עם חומרים, גימורים ועיצוב שלא תמצאו בקטלוג — בלי המחיר של נגרות בהתאמה אישית.
     </p>
     <p class="hero-pre-cta" style="margin-bottom:0.75rem; font-size:1rem; opacity:0.85; color:#ffffff;">מתחילים עם IKEA. מסיימים custom.</p>
-    <a href="#contact" class="hero-cta">
+    <a href="javascript:void(0)" onclick="window.scrollBy({top: 200, behavior: 'smooth'})" class="hero-cta">
       בואו נתחיל
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M19 12H5M12 5l-7 7 7 7"/>
@@ -481,7 +500,7 @@
     </div>
     <div class="what-visual">
       <div class="big-letter">IK</div>
-      <a href="#contact" class="what-badge">בואו נתחיל</a>
+      <a href="javascript:void(0)" onclick="window.scrollBy({top: 200, behavior: 'smooth'})" class="what-badge">בואו נתחיל</a>
     </div>
   </div>
 </section>
@@ -507,14 +526,14 @@
     <div class="carousel-wrap">
       <div class="carousel">
         <div class="carousel-item carousel-item--before">
-          <img src="images/metod-before.png" alt="METOD לפני" />
+          <img src="images/metod-before.png" alt="METOD לפני" loading="lazy" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
             <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-01.png" alt="גימור 01" />
+          <img src="images/metod-after-01.png" alt="גימור 01" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">01</span>
             <span class="item-name">Formica #01</span>
@@ -522,7 +541,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-02.png" alt="גימור 02" />
+          <img src="images/metod-after-02.png" alt="גימור 02" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">02</span>
             <span class="item-name">Palette #1, #2, #3</span>
@@ -530,7 +549,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-03.png" alt="גימור 03" />
+          <img src="images/metod-after-03.png" alt="גימור 03" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">03</span>
             <span class="item-name">Oak #03</span>
@@ -538,7 +557,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-04.png" alt="גימור 04" />
+          <img src="images/metod-after-04.png" alt="גימור 04" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">04</span>
             <span class="item-name">Pine #05</span>
@@ -546,7 +565,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-05.png" alt="גימור 05" />
+          <img src="images/metod-after-05.png" alt="גימור 05" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">05</span>
             <span class="item-name">Birch #02</span>
@@ -554,7 +573,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-06.png" alt="גימור 06" />
+          <img src="images/metod-after-06.png" alt="גימור 06" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">06</span>
             <span class="item-name">Palette #0</span>
@@ -562,7 +581,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/metod-after-07.png" alt="גימור 07" />
+          <img src="images/metod-after-07.png" alt="גימור 07" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">07</span>
             <span class="item-name">Oak #04</span>
@@ -587,14 +606,14 @@
     <div class="carousel-wrap">
       <div class="carousel">
         <div class="carousel-item carousel-item--before">
-          <img src="images/pax-before.png" alt="PAX לפני" />
+          <img src="images/pax-before.png" alt="PAX לפני" loading="lazy" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
             <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/pax-after-01.png" alt="גימור 01" />
+          <img src="images/pax-after-01.png" alt="גימור 01" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">01</span>
             <span class="item-name">Diamond #01</span>
@@ -602,7 +621,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/pax-after-02.png" alt="גימור 02" />
+          <img src="images/pax-after-02.png" alt="גימור 02" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">02</span>
             <span class="item-name">Grid #01</span>
@@ -610,7 +629,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/pax-after-03.png" alt="גימור 03" />
+          <img src="images/pax-after-03.png" alt="גימור 03" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">03</span>
             <span class="item-name">Formica #02</span>
@@ -618,7 +637,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/pax-after-04.png" alt="גימור 04" />
+          <img src="images/pax-after-04.png" alt="גימור 04" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">04</span>
             <span class="item-name">Oak #04</span>
@@ -643,14 +662,14 @@
     <div class="carousel-wrap">
       <div class="carousel">
         <div class="carousel-item carousel-item--before">
-          <img src="images/besta-before.jpg" alt="METOD לפני" />
+          <img src="images/besta-before.jpg" alt="METOD לפני" loading="lazy" />
           <div class="item-label">
             <span class="item-tag item-tag--before">לפני</span>
             <span class="item-name">IKEA Basic</span>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/besta-after-01.jpg" alt="גימור 01" />
+          <img src="images/besta-after-01.jpg" alt="גימור 01" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">01</span>
             <span class="item-name">Grid #02</span>
@@ -658,7 +677,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/besta-after-02.png" alt="גימור 02" />
+          <img src="images/besta-after-02.png" alt="גימור 02" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">02</span>
             <span class="item-name">Palette #04</span>
@@ -666,7 +685,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/besta-after-03.png" alt="גימור 03" />
+          <img src="images/besta-after-03.png" alt="גימור 03" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">03</span>
             <span class="item-name">Walnut Stripes #01</span>
@@ -674,7 +693,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/besta-after-04.png" alt="גימור 04" />
+          <img src="images/besta-after-04.png" alt="גימור 04" loading="lazy" />
           <div class="item-label">
             <span class="item-tag">04</span>
             <span class="item-name">Oak Top #01</span>
@@ -727,22 +746,30 @@
 <section class="section">
   <div class="section-inner">
     <div class="label">איך זה עובד</div>
-    <h2 class="section-title">IKEA כבסיס.<br>IKUP כשפה.</h2>
+    <h2 class="section-title">IKEA כבסיס.<br>IK-UP כשפה.</h2>
     <div class="process-grid">
       <div class="step">
         <div class="step-num">— 01</div>
         <div class="step-title">תכנון מדויק</div>
         <p class="step-text">מתחילים בהבנת הצרכים, המידות והחלל, ובוחרים את מערכת IKEA שתהווה את הבסיס לפרויקט.</p>
+        <button class="dropdown-toggle" onclick="toggleDropdown(this)">קרא עוד <span class="arrow">▼</span></button>
+        <div class="dropdown-content">
+כדי שנוכל להתחיל לדבר עיצוב קודם צריך לדבר תכנון. אם יש לכם רהיט קיים או אתם כבר בדרך לקנות אחד - שלחו לנו את המק"ט/ המידות/ התוכנית ונוכל להתקדם לשלב 2.
+        </div>
       </div>
       <div class="step">
         <div class="step-num">— 02</div>
         <div class="step-title">בחירת השפה העיצובית</div>
         <p class="step-text">בחירה של חומרים, צבעים וגימורים שאי־אפשר למצוא בקטלוג של IKEA.</p>
+        <button class="dropdown-toggle" onclick="toggleDropdown(this)">קרא עוד <span class="arrow">▼</span></button>
+        <div class="dropdown-content">
+בשלב זה תוכלו לבחור ממגוון האופציות העיצוביות שלנו או להציע סגנון עיצובי שאהבתם, לרדת לפרטים הקטנים כמו ידיות מיוחדות, עבודת נגרות עדינה, details עיצוביים שמוסיפים אופי ועומק ולהתחיל לדבר על תמחור.
+        </div>
       </div>
       <div class="step">
         <div class="step-num">— 03</div>
-        <div class="step-title">הפרטים עושים את ההבדל</div>
-        <p class="step-text">ידיות מיוחדות, עבודת נגרות עדינה, details עיצוביים שמוסיפים אופי ועומק.</p>
+        <div class="step-title">בחירת אופן התקנה</div>
+        <p class="step-text">ההתקנה תתבצע עצמאית או על ידי מתקין, כל הפריטים מגיעים מותאמים להתקנה קלה ופשוטה כמו כל חלק של איקאה.</p>
       </div>
     </div>
   </div>
@@ -769,7 +796,7 @@
     </div>
     <div>
       <div class="about-portrait-wrap">
-        <img src="images/portrait.jpg" alt="אדם אפרת" class="about-portrait" />
+        <img src="images/portrait.jpg" alt="אדם אפרת" class="about-portrait" loading="lazy" />
       </div>
       <p class="about-text" style="margin-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
         לא תאמינו כמה אופי אפשר להוסיף בנגיעה אחת, וכמה זמן, כאב ראש
@@ -848,12 +875,18 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <img src="images/logo-footer.png" alt="IK-UP" class="logo-img" style="height:36px;" />
+  <img src="images/logo-footer.png" alt="IK-UP" class="logo-img" style="height:36px;" loading="lazy" />
   <div class="footer-copy">לקחת את הטוב משני העולמות</div>
 </footer>
 
 <script>
 function toggleBtn(btn) { btn.classList.toggle('active'); }
+
+function toggleDropdown(btn) {
+  const content = btn.nextElementSibling;
+  btn.classList.toggle('open');
+  content.classList.toggle('open');
+}
 
 function showFileName(input) {
   const display = document.getElementById('file-name-display');
@@ -936,5 +969,6 @@ function handleSubmit(btn) {
   setTimeout(() => window.open('https://wa.me/9720544600577?text=' + msg, '_blank'), 700);
 }
 </script>
+</main>
 </body>
 </html>
